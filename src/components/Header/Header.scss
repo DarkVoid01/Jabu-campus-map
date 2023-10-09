@@ -1,0 +1,23 @@
+.header{
+    margin: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .logo{
+
+        img{
+            height: 100px;
+        }
+    }
+
+    .heading{
+        display: flex;
+        text-align: center;
+        font-weight: bold;
+        font-size: 32px;
+        color: purple;
+        align-self: center;
+    }
+}

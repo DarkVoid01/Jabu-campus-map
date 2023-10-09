@@ -1,0 +1,37 @@
+.menu{
+   
+    .side-menu{
+            z-index: 1000;
+        .heading{
+            display: flex;
+            float: right;
+
+            .button{
+                background-color: purple;
+            }
+        }
+
+        .slider{
+            background-color: white;
+            width: 80%;
+            height: 70vh;
+            position: absolute;
+            z-index: 1000;
+
+            .heading{
+                font-size: 28px;
+                font-weight: 500;
+            }
+
+            .item{
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+
+            .item:hover{
+                color: red;
+            }
+        }
+    }
+
+}
