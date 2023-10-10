@@ -74,7 +74,15 @@ const Menu = () => {
                               Administrative Buildings
                             </span></AccordionHeader>
                         <AccordionBody accordionId="2">
-                                administrative buildings
+                                   {
+                              Administrative.map(
+                                restaurant =>(
+                                 <div className="item" onClick={handleClick} id={restaurant.location}>
+                                     {restaurant.name}
+                                 </div>
+                                )
+                              )
+                            }
                              </AccordionBody>
                          </AccordionItem>
                           <AccordionItem>
@@ -82,11 +90,15 @@ const Menu = () => {
                               Academic Buildings
                             </span></AccordionHeader>
                            <AccordionBody accordionId="3">
-                             <strong>This is the third item&#39;s accordion body.</strong>
-                             You can modify any of this with custom CSS or overriding our default
-                             variables. It&#39;s also worth noting that just about any HTML can
-                                go within the <code>.accordion-body</code>, though the transition
-                             does limit overflow.
+                             {
+                              Academic.map(
+                                restaurant =>(
+                                 <div className="item" onClick={handleClick} id={restaurant.location}>
+                                     {restaurant.name}
+                                 </div>
+                                )
+                              )
+                            }
                               </AccordionBody>
                          </AccordionItem>
                           <AccordionItem>
@@ -94,11 +106,15 @@ const Menu = () => {
                               Banks
                             </span></AccordionHeader>
                            <AccordionBody accordionId="4">
-                             <strong>This is the third item&#39;s accordion body.</strong>
-                             You can modify any of this with custom CSS or overriding our default
-                             variables. It&#39;s also worth noting that just about any HTML can
-                                go within the <code>.accordion-body</code>, though the transition
-                             does limit overflow.
+                              {
+                              Banks.map(
+                                restaurant =>(
+                                 <div className="item" onClick={handleClick} id={restaurant.location}>
+                                     {restaurant.name}
+                                 </div>
+                                )
+                              )
+                            }
                               </AccordionBody>
                          </AccordionItem>
                           <AccordionItem>
@@ -106,11 +122,15 @@ const Menu = () => {
                               Sporting Areas
                             </span></AccordionHeader>
                            <AccordionBody accordionId="5">
-                             <strong>This is the third item&#39;s accordion body.</strong>
-                             You can modify any of this with custom CSS or overriding our default
-                             variables. It&#39;s also worth noting that just about any HTML can
-                                go within the <code>.accordion-body</code>, though the transition
-                             does limit overflow.
+                              {
+                              Sporting.map(
+                                restaurant =>(
+                                 <div className="item" onClick={handleClick} id={restaurant.location}>
+                                     {restaurant.name}
+                                 </div>
+                                )
+                              )
+                            }
                               </AccordionBody>
                          </AccordionItem>
                           <AccordionItem>
@@ -118,11 +138,15 @@ const Menu = () => {
                               Hostels
                             </span></AccordionHeader>
                            <AccordionBody accordionId="6">
-                             <strong>This is the third item&#39;s accordion body.</strong>
-                             You can modify any of this with custom CSS or overriding our default
-                             variables. It&#39;s also worth noting that just about any HTML can
-                                go within the <code>.accordion-body</code>, though the transition
-                             does limit overflow.
+                              {
+                              Hostel.map(
+                                restaurant =>(
+                                 <div className="item" onClick={handleClick} id={restaurant.location}>
+                                     {restaurant.name}
+                                 </div>
+                                )
+                              )
+                            }
                               </AccordionBody>
                          </AccordionItem>
                          </Accordion>
