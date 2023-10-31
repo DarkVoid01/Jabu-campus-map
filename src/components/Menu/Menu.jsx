@@ -16,6 +16,10 @@ import {
     AccordionItem,
   } from 'reactstrap';
 import "./Menu.scss"
+import { InfoBox } from '@react-google-maps/api';
+
+// add a function to the onclick handler to get time name and Info
+// and pass all of it as a prop
 
 const Menu = () => {
 
