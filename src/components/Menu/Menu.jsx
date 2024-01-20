@@ -17,6 +17,7 @@ import {
   } from 'reactstrap';
 import "./Menu.scss"
 import { InfoBox } from '@react-google-maps/api';
+import Info from '../Info/Info';
 
 // add a function to the onclick handler to get time name and Info
 // and pass all of it as a prop
@@ -25,6 +26,7 @@ const Menu = () => {
 
     const [isOpen, setIsOpen] = useState(false)
     const [open, setOpen] = useState('1');
+
     const toggle = (id) => {
       if (open === id) {
         setOpen();
@@ -34,8 +36,10 @@ const Menu = () => {
     };
 
     const [random, setRandom] = useState('')
-    const handleClick = (event) => {
-      setRandom(event.target.id)
+    const [information, setInformation] = useState({});
+    const handleClick = (restaurant) => {
+      setInformation(restaurant);
+      setRandom(restaurant.location)
     }
 
     var values = random.split(",")
@@ -64,8 +68,9 @@ const Menu = () => {
                           <AccordionBody accordionId="1">
                             {
                               Restaurants.map(
-                                restaurant =>(
-                                 <div className="item" onClick={handleClick} id={restaurant.location}>
+                               
+                               (restaurant,index) =>(
+                                 <div className="item" key={index} onClick={() => handleClick(restaurant)} id={restaurant.location}>
                                      {restaurant.name}
                                  </div>
                                 )
@@ -80,11 +85,11 @@ const Menu = () => {
                         <AccordionBody accordionId="2">
                                    {
                               Administrative.map(
-                                restaurant =>(
-                                 <div className="item" onClick={handleClick} id={restaurant.location}>
-                                     {restaurant.name}
-                                 </div>
-                                )
+                                (restaurant,index) =>(
+                                  <div className="item" key={index} onClick={() => handleClick(restaurant)} id={restaurant.location}>
+                                      {restaurant.name}
+                                  </div>
+                                 )
                               )
                             }
                              </AccordionBody>
@@ -96,11 +101,11 @@ const Menu = () => {
                            <AccordionBody accordionId="3">
                              {
                               Academic.map(
-                                restaurant =>(
-                                 <div className="item" onClick={handleClick} id={restaurant.location}>
-                                     {restaurant.name}
-                                 </div>
-                                )
+                                (restaurant,index) =>(
+                                  <div className="item" key={index} onClick={() => handleClick(restaurant)} id={restaurant.location}>
+                                      {restaurant.name}
+                                  </div>
+                                 )
                               )
                             }
                               </AccordionBody>
@@ -112,11 +117,11 @@ const Menu = () => {
                            <AccordionBody accordionId="4">
                               {
                               Banks.map(
-                                restaurant =>(
-                                 <div className="item" onClick={handleClick} id={restaurant.location}>
-                                     {restaurant.name}
-                                 </div>
-                                )
+                                (restaurant,index) =>(
+                                  <div className="item" key={index} onClick={() => handleClick(restaurant)} id={restaurant.location}>
+                                      {restaurant.name}
+                                  </div>
+                                 )
                               )
                             }
                               </AccordionBody>
@@ -128,11 +133,11 @@ const Menu = () => {
                            <AccordionBody accordionId="5">
                               {
                               Sporting.map(
-                                restaurant =>(
-                                 <div className="item" onClick={handleClick} id={restaurant.location}>
-                                     {restaurant.name}
-                                 </div>
-                                )
+                                (restaurant,index) =>(
+                                  <div className="item" key={index} onClick={() => handleClick(restaurant)} id={restaurant.location}>
+                                      {restaurant.name}
+                                  </div>
+                                 )
                               )
                             }
                               </AccordionBody>
@@ -144,11 +149,11 @@ const Menu = () => {
                            <AccordionBody accordionId="6">
                               {
                               Hostel.map(
-                                restaurant =>(
-                                 <div className="item" onClick={handleClick} id={restaurant.location}>
-                                     {restaurant.name}
-                                 </div>
-                                )
+                                (restaurant,index) =>(
+                                  <div className="item" key={index} onClick={() => handleClick(restaurant)} id={restaurant.location}>
+                                      {restaurant.name}
+                                  </div>
+                                 )
                               )
                             }
                               </AccordionBody>
@@ -158,7 +163,7 @@ const Menu = () => {
                 </Collapse>
         </div>
         <Map latitude={latitude} longitude={longitude} />
-        
+        <Info {...information} />
     </div>
   )
 }
